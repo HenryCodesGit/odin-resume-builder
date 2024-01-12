@@ -1,5 +1,5 @@
 {
-  "name": "odin-template-react",
+  "name": "odin-resume-builder",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -11,7 +11,8 @@
   },
   "dependencies": {
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "uuid": "^9.0.1"
   },
   "devDependencies": {
     "@types/react": "^18.2.43",
@@ -24,5 +25,9 @@
     "eslint-plugin-react-refresh": "^0.4.5",
     "prettier": "3.1.1",
     "vite": "^5.0.8"
-  }
+  },
+  "description": "CV Application Project for The Odin Project.",
+  "main": "vite.config.js",
+  "author": "",
+  "license": "ISC"
 }
