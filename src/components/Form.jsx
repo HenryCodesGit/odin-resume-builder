@@ -4,12 +4,15 @@
     Basically just a form but has option for callback when submitted.
     On submit, it takes the value of all its inputs and returns an object with the values
 */
-export default function Form({
-    children, 
-    formID = "", 
-    submitCallback = ()=>{}}){
 
-    //When submit, pull all data from children and feeds it to the callback
+export default function Form({
+    children,
+    formID = "", 
+    submitCallback = ()=>{},
+    onChangeCallback = ()=>{},
+}){
+
+    //When submit, pull all data from form children and feeds it to the callback
     function submitHandler(event){
         event.preventDefault();
 
@@ -21,11 +24,17 @@ export default function Form({
         submitCallback(output);
     }
 
-    return(
-        <>
-            <form id={formID} onSubmit={submitHandler} method="GET">
-                {children}
-            </form>     
-        </> 
-    );
+    function onChangeHandler(event){
+        event.preventDefault();
+
+        const output = {};
+        output[event.target.name] = event.target.value;
+        onChangeCallback(output);
+    }
+
+    return (<>
+        <form id={formID} onSubmit={submitHandler} method="GET" onChange={onChangeHandler}>
+            {children}
+        </form>     
+    </>);
 }
