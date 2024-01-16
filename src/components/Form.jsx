@@ -19,8 +19,8 @@ export default function Form({
         const inputs = Array.from(event.target);
         const output = inputs.reduce((output, currentInput) => {return {...output, [currentInput.name]: currentInput.value}},{});
 
-        console.log('Submitted form. Sending the following data to the callback:')
-        console.log(output);
+        // console.log('Submitted form. Sending the following data to the callback:')
+        // console.log(output);
         submitCallback(output);
     }
 
