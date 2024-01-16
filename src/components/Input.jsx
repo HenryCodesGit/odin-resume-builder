@@ -11,12 +11,15 @@ export default function Input({
     inputType = "text", 
     value = ""}
 ){
+    console.log(value)
 
     const [currValue, setValueTo] = useState(value);
 
     const onChangeHandler = (val) => {
         setValueTo(val);
     }
+
+   
 
     return (<>
             {(label !== null) ? <label name={name}>
