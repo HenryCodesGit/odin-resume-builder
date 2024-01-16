@@ -18,15 +18,17 @@
       setModalOpen(true);
   } 
 
-    return(
-    <div className="header">
-      <h1 className="name">{headerInfo.name}</h1>
-      <button onClick={editHeader}>Edit</button>
-      <p className="address">{headerInfo.address}</p>
-      <p className="email">{headerInfo.email}</p>
-      <p className="phone">{headerInfo.phone}</p>
-    </div>
-    );
+    return{
+      main: (
+        <div className="header">
+          <h1 className="name">{headerInfo.name}</h1>
+          <p className="address">{headerInfo.address}</p>
+          <p className="email">{headerInfo.email}</p>
+          <p className="phone">{headerInfo.phone}</p>
+        </div>
+        ),
+      formButton: (<button onClick={editHeader}>Edit</button>),
+    };
   }
 
   function HeaderForm(defaults, setHeaderInfo, key,setModalOpen){

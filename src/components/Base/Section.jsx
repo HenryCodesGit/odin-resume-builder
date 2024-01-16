@@ -52,8 +52,8 @@ export default function Section({defaultEntries, entryMappingFunction, defaultFo
         setFormShow(true);
       }
 
-    return(<>
-        <button onClick={showForm}>Add</button>
-        {stateList}
-    </>);
+    return{
+        main: <>{stateList}</>,
+        formButton: <button onClick={showForm}>Add</button>
+    };
 }

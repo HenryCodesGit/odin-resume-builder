@@ -23,15 +23,19 @@ function App() {
 
   return (<>
       {qualificationModal}
-      {header}
+      {header.main}
+      {header.formButton}
       <h1>
         Qualifications and Skills
       </h1>
-      {qualifications}
+      {qualifications.main}
+      {qualifications.formButton}
       <h1>Education</h1>
-      {education}
+      {education.main}
+      {education.formButton}
       <h1>Work Experience</h1>
-      {work}
+      {work.main}
+      {work.formButton}
   </>);
 }
 export default App;
