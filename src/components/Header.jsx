@@ -1,7 +1,8 @@
   import {useState} from "react";
-  import HeaderForm from "./HeaderForm";
   import {v4 as uuidv4} from 'uuid'
-
+  import Form from "./Base/Form";
+  import Input from "./Base/Input";
+  
   export default function Header(setModalOpen, setModalData){
     /* Header section and the relevant form */ 
     const [headerInfo, setHeaderInfo] = useState({
@@ -27,3 +28,19 @@
     </div>
     );
   }
+
+  function HeaderForm(defaults, setHeaderInfo, key,setModalOpen){
+
+    function submitData(data){
+        setHeaderInfo(data);
+        setModalOpen(false);
+    }
+
+    return (<Form formID = {key} submitCallback={submitData}>
+        <Input label = "Name" name = "name" formID={key} value={defaults.name}/>
+        <Input label = "Address" name = "address" formID={key} value={defaults.address}/>
+        <Input inputType = "email" label = "E-mail" name = "email" formID={key} value={defaults.email}/>
+        <Input inputType = "tel" label = "Phone Number" name = "phone" formID={key}  value={defaults.phone}/>
+        <button type="submit" form={key} name="submit">Submit</button>
+    </Form>);
+}
